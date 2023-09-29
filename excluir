@@ -1,0 +1,119 @@
+#include<vector>
+#include<string>
+#include<iostream>
+#include<set>
+
+void quebra_linha()
+{
+    std::cout << std::endl;
+}
+
+bool tem_char_especial(std::string &palavra)
+{
+    for(auto const &letra: palavra)
+    {
+        if((letra >= 65 && letra <= 90) || (letra >= 97 && letra <= 122) || letra == ' ')
+        {
+            continue;
+        }else
+        {
+            return true;
+        }
+        
+    }
+    return false;
+}
+
+
+std::vector<std::string> separa_palavras_vec(std::vector<std::string> &vec)
+{
+    std::string palavra;
+    std::vector<std::string> palavras;
+
+    for(auto const &frase : vec)
+    {
+        for(auto const &letra : frase)
+        {
+            if(letra != ' ')
+            {
+                palavra += letra;
+            }else
+            {
+                palavras.push_back(palavra);
+                palavra = nullptr;
+                
+                
+            }
+        }
+    }
+
+    palavras.push_back(palavra);
+    return palavras;
+
+}
+
+std::vector<std::string> separa_palavras_set(std::set<std::string> &set)
+{
+    std::string palavra;
+    std::vector<std::string> palavras;
+
+    for(auto const &frase : set)
+    {
+        for(auto const &letra : frase)
+        {
+            if(letra != ' ')
+            {
+                palavra += letra;
+            }else
+            {
+                palavras.push_back(palavra);
+                palavra = char();
+                
+            }
+        }
+    }
+
+    palavras.push_back(palavra);
+    return palavras;
+
+}
+
+
+
+
+
+void leia_sequencia_palavras(std::vector<std::string>& vec) {
+  std::vector<std::string> palavras = separa_palavras_vec(vec);
+  for(auto palavra : palavras)
+  {
+    std::cout << palavra << std::endl;
+  }
+    
+}
+
+
+void leia_conjunto_segredos(std::set<std::string>& segredos) {
+    std::vector<std::string> palavras = separa_palavras_set(segredos);
+    for(auto palavra: palavras)
+    {
+        
+        if(tem_char_especial(palavra))
+        {
+            continue;
+        }else
+        {
+            std::cout << palavra << std::endl;
+        }
+    }
+}
+
+
+
+int main()
+{
+    std::set<std::string> vec = {"O amor eh 10-desenvolvido sim!"};
+    leia_conjunto_segredos(vec);
+    
+    
+    return 0;
+}
