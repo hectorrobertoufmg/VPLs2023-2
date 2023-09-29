@@ -8,21 +8,7 @@ void quebra_linha()
     std::cout << std::endl;
 }
 
-bool tem_char_especial(std::string &palavra)
-{
-    for(auto const &letra: palavra)
-    {
-        if((letra >= 65 && letra <= 90) || (letra >= 97 && letra <= 122) || letra == ' ')
-        {
-            continue;
-        }else
-        {
-            return true;
-        }
-        
-    }
-    return false;
-}
+
 
 
 std::vector<std::string> separa_palavras_vec(std::vector<std::string> &vec)
