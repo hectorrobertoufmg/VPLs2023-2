@@ -1,32 +1,24 @@
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <string>
 #include "funcoes.hpp"
 
-
-
-
-int main()
+void printTexto(std::vector<std::string> &texto)
 {
-    std::vector<std::string> frase = {"Deus, para a felicidade do homem, inventou a fé e o amor."};
-    std::vector<std::string> palavras = to_slice(frase);
-
-    for(auto palavra : palavras)
+    for(auto palavra : texto)
     {
         std::cout << palavra << std::endl;
     }
-    
-    
+}
+int main()
+{
 
-    // for(auto palavra : palavras)
-    // {
-        // if(tem_char_especial(palavra))
-        // {
-            // std::cout << "Tem caracter especial: " << palavra << std::endl;
-        // }else
-        // {
-            // std::cout << "Nao tem caracter especial: " << palavra << std::endl;
-        // }
-// 
-    // }
-    
+    std::vector<std::string> texto = {"a senha que voce deve utilizar é cachorro e gato"};
+    std::set<std::string> segredos = {"cachorro gato"};
 
+
+    substituti_strings_por_asteriscos(texto, segredos);
+    printTexto(texto);
     return 0;
 }

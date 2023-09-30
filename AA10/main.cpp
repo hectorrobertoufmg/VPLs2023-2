@@ -9,8 +9,29 @@
  * Esta funcao deve ser implementada de forma a atender as expectativas do
  * Especialista em Lei Geral de Protecao de Dados.
  */
+void leia_sequencia_palavras(std::vector<std::string>& vec) {
+  std::vector<std::string> palavras = to_slice(vec);
+  vec = palavras;}
+
+/**
+ * Esta funcao deve ser implementada de forma a atender as expectativas do
+ * Especialista em Lei Geral de Protecao de Dados.
+ */
+
 void leia_conjunto_segredos(std::set<std::string>& segredos) {
-  // TODO
+  std::set<std::string> palavras = to_slice(segredos);
+  segredos.clear();
+  for(auto palavra : palavras)
+  {
+      if(tem_char_especial(palavra))
+      {
+          
+      }else
+      {
+          segredos.insert(palavra);
+      }
+  }
+  
 }
 
 
@@ -21,8 +42,24 @@ void leia_conjunto_segredos(std::set<std::string>& segredos) {
  */
 void substituti_strings_por_asteriscos(
   std::vector<std::string>& texto,
-  std::set<std::string>& segredos) {
-  // TODO
+  std::set<std::string>& segredos) 
+{
+  leia_sequencia_palavras(texto);
+  // altera no endereço de memoria 
+  std::set<std::string> palavras = to_slice(segredos);
+  segredos = palavras;
+
+  for(std::string &palavra : texto)
+  {
+    for(std::string palavraSecreta : segredos)
+    {
+        if(palavra == palavraSecreta)
+        {
+          coloca_asterisco(palavra);
+        }
+    }
+  }
+
 }
 
 /**
