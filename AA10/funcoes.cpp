@@ -7,17 +7,19 @@ std::vector<std::string> to_slice(std::vector<std::string> &vec)
 {
   std::string palavra;
   std::vector<std::string> palavras;
-
+  int contador = 0;
   for(std::string frase: vec)
   {
     for(char c: frase)
     {
+      contador++;
       if((c != ' '))
       {
         palavra += c;
-        if(frase[frase.size() - 1] == c)
+        if(contador == (frase.size()-1))
         {
           palavras.push_back(palavra);
+          break;
         }
         
       }else
@@ -34,18 +36,22 @@ std::vector<std::string> to_slice(std::vector<std::string> &vec)
 
 std::set<std::string> to_slice(std::set<std::string> &vec)
 {
+  int contador = 0;
   std::string palavra;
   std::set<std::string> palavras;
   for(std::string frase: vec)
   {
     for(char c: frase)
     {
+      contador++;
       if(c != ' ')
       {
+        
         palavra += c;
-        if(frase[frase.size() - 1] == c)
+        if(contador == (frase.size() - 1))
         {
-          palavras.insert(palavra); 
+          palavras.insert(palavra);
+          break; 
           
         }
         
@@ -53,7 +59,9 @@ std::set<std::string> to_slice(std::set<std::string> &vec)
       {
         palavras.insert(palavra);
         palavra.clear();
+        
       }
+      
 
     }
   }

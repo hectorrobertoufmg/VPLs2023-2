@@ -5,7 +5,6 @@
 #include <string>
 #include <iostream>
 #include <set>
-void quebra_linha();
 
 /**
  * Esta funcao deve ser implementada de forma a atender as expectativas do
