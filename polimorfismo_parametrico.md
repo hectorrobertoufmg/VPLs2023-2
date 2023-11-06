@@ -22,4 +22,47 @@ O polimorfismo paramétrico explícito e implícito são duas abordagens relacio
 
 **Em resumo, a principal diferença entre o polimorfismo paramétrico explícito e implícito está na forma como os tipos são especificados e tratados. O explícito requer especificação de tipos com templates, enquanto o implícito permite que o compilador deduza automaticamente os tipos com base nos argumentos passados. A escolha entre os dois depende das necessidades do projeto e dos trade-offs entre otimização, tamanho do binário e flexibilidade do código.**
 
-Este resumo foi gerado por você a partir dos seus textos.
+
+Polimorfismo Paramétrico Implícito (Exemplo):
+
+#include <iostream>
+
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    int result_int = add(5, 3);
+    double result_double = add(3.5, 2.7);
+    std::string result_string = add("Hello, ", "World!");
+
+    std::cout << "Soma de inteiros: " << result_int << std::endl;
+    std::cout << "Soma de doubles: " << result_double << std::endl;
+    std::cout << "Concatenação de strings: " << result_string << std::endl;
+
+    return 0;
+}
+
+
+
+Polimorfismo Paramétrico Explícito (Exemplo):
+
+#include <iostream>
+
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    int result_int = add<int>(5, 3);
+    double result_double = add<double>(3.5, 2.7);
+    std::string result_string = add<std::string>("Hello, ", "World!");
+
+    std::cout << "Soma de inteiros: " << result_int << std::endl;
+    std::cout << "Soma de doubles: " << result_double << std::endl;
+    std::cout << "Concatenação de strings: " << result_string << std::endl;
+
+    return 0;
+}
