@@ -1,6 +1,8 @@
+# Polimorfismo Paramétrico Explícito e Implícito em C++
+
 O polimorfismo paramétrico explícito e implícito são duas abordagens relacionadas ao uso de tipos genéricos em C++, mas eles diferem na forma como os tipos são tratados. Vou explicar as diferenças entre os dois para ajudar a esclarecer:
 
-**Polimorfismo Paramétrico Explícito:**
+## Polimorfismo Paramétrico Explícito:
 
 - Nesta abordagem, você utiliza templates (modelos) explicitamente em seu código. Isso significa que você define as classes ou funções com parâmetros de template que representam tipos genéricos, como `typename T` ou `class T`.
 
@@ -10,7 +12,7 @@ O polimorfismo paramétrico explícito e implícito são duas abordagens relacio
 
 - No entanto, a desvantagem é que a geração de código específico para cada tipo pode aumentar o tamanho do binário e levar a tempos de compilação mais longos, especialmente em projetos grandes com muitas instâncias de templates.
 
-**Polimorfismo Paramétrico Implícito:**
+## Polimorfismo Paramétrico Implícito:
 
 - Nesta abordagem, você não usa templates explicitamente em seu código. Em vez disso, você escreve funções ou classes que aceitam argumentos de tipos genéricos, mas você não especifica os tipos como argumentos de template.
 
@@ -20,11 +22,15 @@ O polimorfismo paramétrico explícito e implícito são duas abordagens relacio
 
 - A desvantagem é que o compilador não pode realizar otimizações específicas em tempo de compilação para tipos conhecidos, o que pode resultar em menos otimizações em comparação ao polimorfismo paramétrico explícito.
 
-**Em resumo, a principal diferença entre o polimorfismo paramétrico explícito e implícito está na forma como os tipos são especificados e tratados. O explícito requer especificação de tipos com templates, enquanto o implícito permite que o compilador deduza automaticamente os tipos com base nos argumentos passados. A escolha entre os dois depende das necessidades do projeto e dos trade-offs entre otimização, tamanho do binário e flexibilidade do código.**
+Em resumo, a principal diferença entre o polimorfismo paramétrico explícito e implícito está na forma como os tipos são especificados e tratados. O explícito requer especificação de tipos com templates, enquanto o implícito permite que o compilador deduza automaticamente os tipos com base nos argumentos passados. A escolha entre os dois depende das necessidades do projeto e dos trade-offs entre otimização, tamanho do binário e flexibilidade do código.
 
+*Este resumo foi gerado por você a partir dos seus textos.*
 
-Polimorfismo Paramétrico Implícito (Exemplo):
+## Exemplo de Polimorfismo Paramétrico Implícito:
 
+Aqui está um exemplo de polimorfismo paramétrico implícito em C++:
+
+```cpp
 #include <iostream>
 
 template <typename T>
@@ -36,29 +42,6 @@ int main() {
     int result_int = add(5, 3);
     double result_double = add(3.5, 2.7);
     std::string result_string = add("Hello, ", "World!");
-
-    std::cout << "Soma de inteiros: " << result_int << std::endl;
-    std::cout << "Soma de doubles: " << result_double << std::endl;
-    std::cout << "Concatenação de strings: " << result_string << std::endl;
-
-    return 0;
-}
-
-
-
-Polimorfismo Paramétrico Explícito (Exemplo):
-
-#include <iostream>
-
-template <typename T>
-T add(T a, T b) {
-    return a + b;
-}
-
-int main() {
-    int result_int = add<int>(5, 3);
-    double result_double = add<double>(3.5, 2.7);
-    std::string result_string = add<std::string>("Hello, ", "World!");
 
     std::cout << "Soma de inteiros: " << result_int << std::endl;
     std::cout << "Soma de doubles: " << result_double << std::endl;
