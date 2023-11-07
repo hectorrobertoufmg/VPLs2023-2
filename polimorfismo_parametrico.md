@@ -1,6 +1,6 @@
 # Polimorfismo Paramétrico Explícito e Implícito em C++
 
-O polimorfismo paramétrico explícito e implícito são duas abordagens relacionadas ao uso de tipos genéricos em C++, mas eles diferem na forma como os tipos são tratados. Vou explicar as diferenças entre os dois para ajudar a esclarecer:
+O polimorfismo paramétrico é uma subclasse do `Polimorfismo Universal` explícito e implícito são duas abordagens relacionadas ao uso de tipos genéricos em C++, mas eles diferem na forma como os tipos são tratados. Vou explicar as diferenças entre os dois para ajudar a esclarecer:
 
 ## Polimorfismo Paramétrico Explícito:
 

@@ -1,6 +1,6 @@
 # **Polimorfismo de Inclusão (Subtipagem)**
 
-O **polimorfismo de inclusão**, também conhecido como **subtipagem**, é uma importante característica da programação orientada a objetos, comumente utilizado em linguagens como C++. 
+O **polimorfismo de inclusão**, também conhecido como **subtipagem**, é uma é uma subclase do `Polimorfismo Universal` importante característica da programação orientada a objetos, comumente utilizado em linguagens como C++. 
 
 ## **Subtipagem e Herança**
 
