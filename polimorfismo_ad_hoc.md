@@ -27,6 +27,8 @@ Nesse exemplo, a função print tem comportamentos diferentes com base no tipo d
 ## **Sobrecarga (Overload)**
 A sobrecarga é uma forma de polimorfismo ad-hoc. **Refere-se à capacidade de ter métodos ou funções com o mesmo nome, mas com listas de parâmetros diferentes**. Isso permite que diferentes versões da função sejam chamadas com base no número ou tipo de argumentos. **Importante lembrar que a Sobrecarga prioriza inteiros sobre doubles. Primeiro converte para inteiros e depois para double**
 
+
+
 ### Exemplo:
 Considere uma classe **`Calculadora`** com uma função soma que pode adicionar números inteiros ou números de ponto flutuante:
 ```cpp
